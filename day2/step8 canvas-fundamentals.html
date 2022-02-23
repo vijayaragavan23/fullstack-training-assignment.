@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black
+        }
+    </style>
+    <script>
+        var can, ctx;
+        addEventListener("load", init);
+        function init(){
+            can = document.getElementsByTagName("canvas")[0]
+            can.width = 500
+            can.height = 500
+            ctx = can.getContext("2d");
+            /*
+            ctx.font ="bold 36px arial"
+            ctx.textAlign ="center"
+            ctx.fillText("ischool india",150,50);
+            */
+            var img = new Image();
+            img.src = "C:/Users/vijay/OneDrive/Desktop/images/joker.jpg";
+            img.addEventListener("load", function(){
+                
+                ctx.drawImage(img,0,0);
+            })/*
+            ctx.moveTo(50,50);
+            ctx.lineto(100,100);
+            ctx.moveto(100,100);
+            ctx.lineto(200,200);
+            ctx.stroke();
+*/
+        
+        };
+    </script>
+</head>
+<body>
+    <canvas > </canvas>
+</body>
+</html>
