@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid grey;
+            display:block;
+            margin: auto;
+        }
+        </style>
+        <script>
+            addEventListener("load", init);
+            var can, ctx, boxX = 0 , boxY = -100, boxD = 100;
+            function init(){
+                can = document.getElementById("can");
+                can.width = 500;
+                can.height = 500;
+                ctx = can.getContext("2d");
+                setInterval(animation,0);
+                }
+                function animation(){
+                    ctx.clearRect(0,0,100,500);
+                   ctx.fillRect(boxX,boxY,boxD,boxD);
+                   boxY++;
+                   if(boxY > 500){
+                       boxY = -100;
+                   }
+
+
+                };
+
+
+        </script>
+
+</head>
+<body>
+    <canvas id="can"></canvas>
+    
+</body>
+</html>
