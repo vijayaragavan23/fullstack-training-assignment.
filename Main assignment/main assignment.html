@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting card</title>
+    <style>
+          canvas{
+            border: 5px solid grey;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgb(241, 150, 116);
+           background: linear-gradient(0deg, rgb(24, 6, 36) 0%, rgba(231,0,0,1) 50%, rgb(125, 15, 189) 100%);
+           overflow: auto;
+        }
+    </style>
+  
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <hr>
+    <form action="#" method="get">
+        <label for="name">User Name: </label>
+        <input type="text" id="name"><br>
+        <label for="birthdate">Birthday Date: </label>
+        <input type="date" id="birthdate"><br>
+        <input type="button" id="btn" onclick="Card()" value="card"> 
+    </form>
+    <script src = "dummy.js"></script>
+   
+    
+</body>
+</html>
