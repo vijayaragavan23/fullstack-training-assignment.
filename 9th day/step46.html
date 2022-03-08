@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function adder(num1 = 0, num2 = 0){
+        //     return num1 + num2;
+        // }
+        // console.log(adder(5));
+
+
+        //Rest parameters
+        // function adder(...nums){
+        //     let total = 0;
+        //     for(let i = 0; i < nums.length; i++){
+        //         total += nums[i]
+        //     }
+        //     return total;
+        // };
+        // console.log(adder(5));
+        // console.log(adder(5,6));
+        // console.log(adder(5,6,7));
+        // console.log(adder(5,6,7,8));
+
+        function adder(...nums){
+            let total = 0;
+            for(let i = 0; i < nums.length; i++){
+                total += nums[i]
+            }
+            return total;
+        };
+
+       var arr = [5,6,7,8,9];
+       console.log(adder(...arr))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
