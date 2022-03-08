@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax fundamentals</title>
+    <style>
+    
+    div{
+        border: 20px solid black;
+        margin: auto;
+        height: 600px;
+        width: 600px;
+        overflow: auto;
+        
+    }
+    button {
+  margin:auto;
+  display:block;
+}
+  </style>
+   <script>
+       var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               console.log("ready state value: ", xhr.readyState);
+               if(xhr.status == 200 && xhr.readyState == 4){
+                   var herodata = JSON.parse(xhr.responseText).herolist;
+                   console.log( herodata.length );
+                   for(var i = 0; i < herodata.length; i++){
+                //    document.getElementById("hl").innerHTML += "<li>"+hero[i].getElementsByTagName("title")[0].firstChild.nodeValue+"</li>"
+                //    document.getElementById("h1").innerHTML += "<li>"+herodata[i].title+"</li>";
+                      document.getElementById("hl").innerHTML += "<li>"+herodata[i].title+"</li>";
+                   }
+               }else{
+                //    document.getElementById("log").innerHTML += "XHR Status"+ xhr.status+ " | xHR status text :"+xhr.status
+                console.log(xhr.readyState);
+               }
+
+           };
+           document.addEventListener("DOMContentLoaded", function(){
+               document.getElementsByTagName("button")[0].onclick = function(){
+                   xhr.open("get","data.json",true);//
+                   xhr.send();
+               }
+           })
+       
+   </script>
+</head>
+<body>
+    <button>Fetch data</button>
+    <hr>
+    <!-- <div id="log" ></div> -->
+    <ol id="hl"></ol>
+   
+    
+</body>
+</html>
