@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        //  let listitem1 = React.createElement("li",null,"hey");
+        //  let herolist = React.createElement("ul",null,[listitem1])
+        // let Hero =function(props){
+        //     return<li>{props.title}</li>
+        // }
+        // let Herolist = function(){
+        //     return <ul>
+        //         <li>ironman</li>
+        //         <li>superman</li>
+        //         <li>batman</li>
+        //         <li>joker</li>
+        //         </ul>
+        // }
+        let Hero =function(props){
+            return<li>{props.title}</li>
+        }
+        let Herolist = function(){
+            let list = ["ironman","hulk","captain america"]
+            return <ul>
+                {
+                list.map((hero,idx) => <Hero key={idx} title={hero} />)    
+                }
+                </ul>
+        }
+          const root = ReactDOM.createRoot(document.getElementById("root"));
+             root.render(<Herolist/>);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
